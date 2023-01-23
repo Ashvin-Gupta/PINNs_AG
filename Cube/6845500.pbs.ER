@@ -1,0 +1,216 @@
+2023-01-22 12:25:43.486431: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+WARNING:tensorflow:From /rds/general/user/ch720/home/anaconda3/envs/PINNs/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+/rds/general/user/ch720/home/anaconda3/envs/PINNs/lib/python3.9/site-packages/tensorflow/python/keras/legacy_tf_layers/core.py:171: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  warnings.warn('`tf.layers.dense` is deprecated and '
+/rds/general/user/ch720/home/anaconda3/envs/PINNs/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py:1719: UserWarning: `layer.apply` is deprecated and will be removed in a future version. Please use `layer.__call__` method instead.
+  warnings.warn('`layer.apply` is deprecated and '
+2023-01-22 12:26:53.107847: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-22 12:26:53.111732: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2023-01-22 12:26:53.531034: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:26:53.531862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:26:53.531941: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:26:54.164205: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:26:54.164352: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:26:54.303538: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:26:54.484083: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:26:54.635156: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:26:54.844483: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:26:55.073087: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:26:55.075964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:26:55.076069: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:26:59.162546: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:26:59.162681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:26:59.162762: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:26:59.164363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:26:59.167243: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:26:59.230085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:26:59.230465: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:27:14.362115: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2023-01-22 12:27:14.402128: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2100000000 Hz
+2023-01-22 12:27:14.880121: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:27:17.287383: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:27:17.288342: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:27:17.288431: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:27:17.288490: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:27:17.288525: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:27:17.288551: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:27:17.288583: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:27:17.288613: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:27:17.288639: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:27:17.288665: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:27:17.291220: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:27:17.291281: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:27:17.291295: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:27:17.291306: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:27:17.291315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:27:17.293125: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:27:17.293758: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:27:17.293788: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:27:32.393295: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:27:32.394003: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:27:32.394054: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:27:32.394085: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:27:32.394100: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:27:32.394115: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:27:32.394131: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:27:32.394146: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:27:32.394161: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:27:32.394176: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:27:32.396551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:27:32.396622: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:27:32.396638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:27:32.396651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:27:32.396661: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:27:32.398413: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:27:32.398999: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:27:32.399031: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:27:47.801714: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:27:47.802428: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:27:47.802492: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:27:47.802526: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:27:47.802544: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:27:47.802561: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:27:47.802579: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:27:47.802597: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:27:47.802614: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:27:47.802632: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:27:47.805069: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:27:47.805132: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:27:47.805148: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:27:47.805160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:27:47.805170: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:27:47.807199: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:27:47.808096: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:27:47.808156: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:28:03.131989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:03.132701: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:03.132761: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:28:03.132801: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:28:03.132820: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:28:03.132840: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:28:03.132861: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:28:03.132883: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:28:03.132903: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:28:03.132927: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:28:03.135204: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:28:03.135261: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:28:03.135275: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:28:03.135285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:28:03.135294: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:28:03.137408: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:28:03.138132: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:28:03.138170: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:28:18.931660: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:18.932648: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:18.932718: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:28:18.932753: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:28:18.932770: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:28:18.932788: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:28:18.932806: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:28:18.932824: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:28:18.932841: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:28:18.932859: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:28:18.935017: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:28:18.935074: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:28:18.935088: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:28:18.935098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:28:18.935107: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:28:18.936795: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:28:18.937413: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:28:18.937443: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:28:34.671404: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:34.672257: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:34.672314: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:28:34.672347: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:28:34.672366: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:28:34.672383: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:28:34.672401: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:28:34.672418: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:28:34.672436: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:28:34.672454: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:28:34.674932: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:28:34.675013: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:28:34.675038: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:28:34.675055: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:28:34.675070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:28:34.677523: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:28:34.678397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:28:34.678451: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:28:50.407372: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:50.408115: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:28:50.408176: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:28:50.408208: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:28:50.408226: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:28:50.408243: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:28:50.408261: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:28:50.408279: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:28:50.408296: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:28:50.408314: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:28:50.410935: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:28:50.410993: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:28:50.411009: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:28:50.411021: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:28:50.411032: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:28:50.413056: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:28:50.413703: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:28:50.413734: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-22 12:29:06.557676: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:8a:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:29:06.558560: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:8c:00.0 name: Quadro RTX 6000 computeCapability: 7.5
+coreClock: 1.77GHz coreCount: 72 deviceMemorySize: 23.65GiB deviceMemoryBandwidth: 625.94GiB/s
+2023-01-22 12:29:06.558625: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-22 12:29:06.558664: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-22 12:29:06.558683: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-22 12:29:06.558703: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-22 12:29:06.558723: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-22 12:29:06.558745: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-22 12:29:06.558765: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-22 12:29:06.558783: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-22 12:29:06.561059: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-22 12:29:06.561121: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-22 12:29:06.561136: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-22 12:29:06.561148: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-22 12:29:06.561159: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-22 12:29:06.562978: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22476 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:8a:00.0, compute capability: 7.5)
+2023-01-22 12:29:06.563545: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22476 MB memory) -> physical GPU (device: 1, name: Quadro RTX 6000, pci bus id: 0000:8c:00.0, compute capability: 7.5)
+2023-01-22 12:29:06.563569: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+findfont: Font family ['Times New Roman'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['Times New Roman'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['Times New Roman'] not found. Falling back to DejaVu Sans.
