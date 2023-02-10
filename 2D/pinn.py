@@ -97,7 +97,7 @@ class PINN():
         if self.dim ==1:
             losshistory, train_state = self.train_1_phase(out_path, params)
         elif self.dim == 2:
-            losshistory, train_state = self.train_3_phase(out_path, params)
+            losshistory, train_state = self.train_1_phase(out_path, params)
         return self.model, losshistory, train_state
         
     def train_1_phase(self, out_path, params):

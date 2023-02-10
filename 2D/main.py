@@ -10,6 +10,7 @@ from generate_plots_1d import plot_1D
 from generate_plots_2d import plot_2D
 import utils
 import pinn
+import scipy.io as spy
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -33,7 +34,7 @@ def main(args):
     ## Get Dynamics Class
     dynamics = utils.system_dynamics()
     
-    ## Parameters to inverse (if needed)
+    ## Parameters to estimate in inverse mode (if needed)
     params = dynamics.params_to_inverse(args.inverse)
     
     ## Generate Data 
@@ -90,6 +91,11 @@ def main(args):
     ## Save predictions, data
     np.savetxt("train_data.dat", np.hstack((observe_train, v_train, w_train)),header="observe_train,v_train, w_train")
     np.savetxt("test_pred_data.dat", np.hstack((observe_test, v_test,v_pred, w_test, w_pred)),header="observe_test,v_test, v_pred, w_test, w_pred")
+    
+    ## Save data to Matlab
+    dici1={"model_pred": pred, "observe_x": observe_test}
+    file_name_save = file_name[0:-4] + "PINNs.mat"
+    spy.savemat(file_name_save,dici1)
     
     ## Generate Figures
     data_list = [observe_x, observe_train, v_train, V]
