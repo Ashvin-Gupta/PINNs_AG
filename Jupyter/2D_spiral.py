@@ -10,7 +10,7 @@ import numpy as np
 import deepxde as dde # version 0.11 or higher
 from deepxde.backend import tf
 import matplotlib as mp
-
+import pylab
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -208,11 +208,11 @@ def plot_2D_cell(data_list, model, fig_name):
     plt.ylabel('V')
 
     ## save figure
-    #png1 = io.BytesIO()
-    #plt.savefig(png1, format="png", dpi=500, pad_inches = .1, bbox_inches = 'tight')
-    #png2 = Image.open(png1)
-    #png2.save(fig_name + "_cell_plot_2D.tiff")
-    #png1.close()
+    png1 = io.BytesIO()
+    plt.savefig(png1, format="png", dpi=500, pad_inches = .1, bbox_inches = 'tight')
+    png2 = Image.open(png1)
+    png2.save(fig_name + "_cell_plot_2D.tiff")
+    png1.close()
     return 0
 
 def plot_2D_grid(data_list, model, fig_name):
@@ -246,11 +246,11 @@ def plot_2D_grid(data_list, model, fig_name):
     cbar.ax.set_ylabel('V')
 
     ## save figure
-    #png1 = io.BytesIO()
-    #plt.savefig(png1, format="png", dpi=500, pad_inches = .1, bbox_inches = 'tight')
-    #png2 = Image.open(png1)
-    #png2.save(fig_name + "_grid_plot_2D.tiff")
-    #png1.close()
+    png1 = io.BytesIO()
+    plt.savefig(png1, format="png", dpi=500, pad_inches = .1, bbox_inches = 'tight')
+    png2 = Image.open(png1)
+    png2.save(fig_name + "_grid_plot_2D.tiff")
+    png1.close()
     return 0
 
 def generate_2D_animation( model, fig_name):
