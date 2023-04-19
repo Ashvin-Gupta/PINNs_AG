@@ -17,5 +17,5 @@ echo $CUDA_VISIBLE_DEVICES
 
 cd $PBS_O_WORKDIR
 echo $PBS_O_WORKDIR
-python main.py -d 2 -f "Spiral_diffGeom.mat" -m "/data/Different_geom" -p 
+python main.py -d 2 -f "MartaDataTrunc.mat" -m "/data/Spiral" -p
 

@@ -21,26 +21,26 @@
 
 close all
 clear all
-tend = 145;
-Dfac = 1; % factor by which D0 is reduced in fibrotic area
+tstar=76; % time, AU, at which the data starts being saved (because the 
+% spiral wave has formed already)
+tend = tstar+55;
+% Dfac = 1; % factor by which D0 is reduced in fibrotic area
 % extra=0;
 ncells_x=120;
-ncells_y=80;
-ncells = 100;
+ncells_y=100;
 iscyclic=0;
 flagmovie=1;
-matname='Spiral_diffGeom';
+matname='Spiral_Marta';
 
 index  = 1;
 
-setglobs(ncells,Dfac);
-global fibloc
+setglobs(ncells_x, ncells_y);
 
 % one of the biggest determinants of the propagation speed
 % (D should lead to realistic conduction velocities, i.e.
 % between 0.6 and 0.9 m/s)
-X = ncells + 2; % to allow boundary conditions implementation
-Y = ncells + 2;
+X = ncells_x + 2; % to allow boundary conditions implementation
+Y = ncells_y + 2;
 stimgeo=false(X,Y);
 stimgeo(1:5,:)=true; % indices of cells where external stimulus is felt
 
@@ -63,15 +63,13 @@ Ia=0.12; % AU, value for Istim when cell is stimulated
 V(1:X,1:Y)=0; % initial V
 W(1:X,1:Y)=0.01; % initial W
 
-Vsav=zeros(ncells,ncells,ceil((tend-tstar)/gathert)); % array where V will be saved during simulation
-Wsav=zeros(ncells,ncells,ceil((tend-tstar)/gathert)); % array where W will be saved during simulation
+Vsav=zeros(ncells_x,ncells_y,ceil((tend-tstar)/gathert)); % array where V will be saved during simulation
+Wsav=zeros(ncells_x,ncells_y,ceil((tend-tstar)/gathert)); % array where W will be saved during simulation
 
 
 ind=0; %iterations counter
 
-y=zeros(2,size(V,1),size(V,2));
-
-
+yfun=zeros(2,size(V,1),size(V,2));
 
 % for loop for explicit RK4 finite differences simulation
 for t=dt:dt:tend % for every timestep
@@ -86,45 +84,42 @@ for t=dt:dt:tend % for every timestep
         end
         
         % 4-step explicit Runga-Kutta implementation
-        y(1,:,:)=V;
-        y(2,:,:)=W;
-        k1=AlPan(y,Istim);
-        k2=AlPan(y+dt/2.*k1,Istim);
-        k3=AlPan(y+dt/2.*k2,Istim);
-        k4=AlPan(y+dt.*k3,Istim);
-        y=y+dt/6.*(k1+2*k2+2*k3+k4);
-        V=squeeze(y(1,:,:));
-        W=squeeze(y(2,:,:));
+        yfun(1,:,:)=V;
+        yfun(2,:,:)=W;
+        k1=AlPan(yfun,Istim);
+        k2=AlPan(yfun+dt/2.*k1,Istim);
+        k3=AlPan(yfun+dt/2.*k2,Istim);
+        k4=AlPan(yfun+dt.*k3,Istim);
+        yfun=yfun+dt/6.*(k1+2*k2+2*k3+k4);
+        V=squeeze(yfun(1,:,:));
+        W=squeeze(yfun(2,:,:));
                       
         % rectangular boundary conditions: no flux of V
-        if  ~iscyclic % 1D cable
-            V(1,:)=V(2,:);
-            V(end,:)=V(end-1,:);
-            V(:,1)=V(:,2);
-            V(:,end)=V(:,end-1);
-        else % periodic boundary conditions in x, y or both
-            % set up later - need to amend derivatives calculation too
-        end
+        V(1,:)=V(2,:);
+        V(end,:)=V(end-1,:);
+        V(:,1)=V(:,2);
+        V(:,end)=V(:,end-1);
+
         
         % At every gathert iterations, save V value for plotting
         if t>=tstar&&mod(ind,gathert)==0
             % save values
-            Vsav(:,:,index)=V(2:end-1,2:end-1)';
-            Wsav(:,:,index)=W(2:end-1,2:end-1)';
+            Vsav(:,:,index)=V(2:end-1,2:end-1);
+            Wsav(:,:,index)=W(2:end-1,2:end-1);
             index = index +1;
             % show (thicker) cable
             if flagmovie
                 subplot(2,1,1)
                 imagesc(V(2:end-1,2:end-1)',[0 1])
                 hold all
-                if Dfac<1 % there is a heterogeneity
-                    rectangle('Position',[fibloc(1) fibloc(1) ...
-                        fibloc(2)-fibloc(1) fibloc(2)-fibloc(1)]);
-                end
+%                 if Dfac<1 % there is a heterogeneity
+%                     rectangle('Position',[fibloc(1) fibloc(1) ...
+%                         fibloc(2)-fibloc(1) fibloc(2)-fibloc(1)]);
+%                 end
                 axis image
                 set(gca,'FontSize',14)
                 xlabel('x (voxels)')
-                ylabel('y (voxels)')
+                ylabel('yfun (voxels)')
                 set(gca,'FontSize',14)
                 title(['V (AU) - Time: ' num2str(t,'%.0f') ' ms'])
                 colorbar
@@ -133,14 +128,14 @@ for t=dt:dt:tend % for every timestep
                 subplot(2,1,2)
                 imagesc(W(2:end-1,2:end-1)',[0 1])
                 hold all
-                if Dfac<1 % there is a heterogeneity
-                    rectangle('Position',[fibloc(1) fibloc(1) ...
-                        fibloc(2)-fibloc(1) fibloc(2)-fibloc(1)]);
-                end
+%                 if Dfac<1 % there is a heterogeneity
+%                     rectangle('Position',[fibloc(1) fibloc(1) ...
+%                         fibloc(2)-fibloc(1) fibloc(2)-fibloc(1)]);
+%                 end
                 axis image
                 set(gca,'FontSize',14)
                 xlabel('x (voxels)')
-                ylabel('y (voxels)')
+                ylabel('yfun (voxels)')
                 set(gca,'FontSize',14)
                 title(['V (AU) - Time: ' num2str(t,'%.0f') ' ms'])
                 colorbar
@@ -149,39 +144,21 @@ for t=dt:dt:tend % for every timestep
                 colorbar
                 pause(0.01)
                 hold off
+%                 waitforbuttonpress;
             end
         end
 end
 
-tmax=70;
-t=zeros(1,tmax);
-for time=1:tmax
-    t(time)=time;
-end
-
-%save('spiral_2d.mat', 'Vsav', 'Wsav', 'x', 'y')
-x=zeros(1,ncells);
-y=zeros(1,ncells);
-
-
-
-for space=1:ncells_x
-    x(space)=(space/10);
-end
-
-for space=1:ncells_y
-    y(space)=(space/10);
-end
+x=h:h:ncells_x*h;
+y=h:h:ncells_y*h;
+t=1:1:size(Vsav,3);
 save([matname '.mat'],'Vsav','Wsav','x','t','y','-v7')
 
-
-close all
-
-function dydt = AlPan(y,Istim)
+function dydt = AlPan(yfun,Istim)
     global a k mu1 mu2 epsi b h D
     
-    V=squeeze(y(1,:,:));
-    W=squeeze(y(2,:,:));
+    V=squeeze(yfun(1,:,:));
+    W=squeeze(yfun(2,:,:));
     
     [gx,gy]=gradient(V,h);
     [Dx,Dy]=gradient(D,h);
@@ -193,8 +170,9 @@ function dydt = AlPan(y,Istim)
     dydt(2,:,:)=dWdt;
 end
 
-function setglobs(ncells,Dfac)
-    global a k mu1 mu2 epsi b h D X fibloc
+% function setglobs(ncells,Dfac)
+function setglobs(ncells_x, ncells_y)
+    global a k mu1 mu2 epsi b h D X Y
     a = 0.01;
     k = 8.0;
     mu1 = 0.2;
@@ -202,13 +180,14 @@ function setglobs(ncells,Dfac)
     epsi = 0.002;
     b  = 0.15;
     h = 0.1; % mm cell length
-    X = ncells + 2; % to allow boundary conditions implementation
-    fibloc=[floor(X/3) ceil(X/3+X/5)]; % location of (square) heterogeneity
+    X = ncells_x + 2; % to allow boundary conditions implementation
+    Y = ncells_y + 2; 
+%     fibloc=[floor(X/3) ceil(X/3+X/5)]; % location of (square) heterogeneity
     
     D0 = 0.1; % mm^2/UA, diffusion coefficient (for monodomain equation)
 
-    D = D0*ones(X,X);
-    D(fibloc(1):fibloc(2),fibloc(1):fibloc(2))=D0*Dfac;
+    D = D0*ones(X,Y);
+%     D(fibloc(1):fibloc(2),fibloc(1):fibloc(2))=D0*Dfac;
 end
 
 
