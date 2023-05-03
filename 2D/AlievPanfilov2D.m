@@ -35,6 +35,7 @@ matname='Spiral_Marta';
 index  = 1;
 
 setglobs(ncells_x, ncells_y);
+global h
 
 % one of the biggest determinants of the propagation speed
 % (D should lead to realistic conduction velocities, i.e.
