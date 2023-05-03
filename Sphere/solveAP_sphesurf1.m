@@ -71,29 +71,29 @@ APmodel.SolverOptions.ReportStatistics='on';
 R = solvepde(APmodel,tlist);
 u = R.NodalSolution;
 
-figure
-nod=1;
-plot(tlist,squeeze(u(nod,1,:)))
-hold all
-plot(tlist,squeeze(u(nod,2,:)))
-grid on
-xlabel('Time (s)')
-legend('V','W')
-
-figure; 
-tshow=30;
-plot(squeeze(u(:,1,tshow)),'.')
-hold all
-plot(squeeze(u(:,2,tshow)),'.')
-grid on
-xlabel('Node')
-legend('V','W')
+% figure
+% nod=1;
+% plot(tlist,squeeze(u(nod,1,:)))
+% hold all
+% plot(tlist,squeeze(u(nod,2,:)))
+% grid on
+% xlabel('Time (s)')
+% legend('V','W')
+% 
+% figure; 
+% tshow=30;
+% plot(squeeze(u(:,1,tshow)),'.')
+% hold all
+% plot(squeeze(u(:,2,tshow)),'.')
+% grid on
+% xlabel('Node')
+% legend('V','W')
 
 % ylabel 'u_{heart} (AU)'
 
 for t=tini+dt:dt:tfin
     if ~mod(t,dt_disp)
-        mywritemeshvtktetra(mesh,squeeze(u(:,1,t))*100-80,[name num2str(t,'%.0f') '.vtk']);
+        mywritemeshvtktetra(mesh,squeeze(u(:,1,t)),['SphereLinear/' name num2str(t,'%d') '.vtk']);
     end 
 end
 save([name '.mat'],'-v7')
