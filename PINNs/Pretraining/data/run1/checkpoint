@@ -1,0 +1,2 @@
+model_checkpoint_path: "/rds/general/user/ag619/home/ashvin/noise_param/data/run1/-50019.ckpt"
+all_model_checkpoint_paths: "/rds/general/user/ag619/home/ashvin/noise_param/data/run1/-50019.ckpt"
