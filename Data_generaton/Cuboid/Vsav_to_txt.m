@@ -3,7 +3,7 @@
 % generation file
 % Assuming Vsav is a variable containing data
 
-file_path = 'Vsav.txt';
+file_path = 'Vsav_3D_spiral_input.txt';
 
 % Open the file in write mode
 file_id = fopen(file_path, 'w');
@@ -12,9 +12,19 @@ file_id = fopen(file_path, 'w');
 if file_id == -1
     error('Failed to open the file for writing.');
 end
+% Get the size of Vsav
+[x_size, y_size, z_size, t_size] = size(Vsav);
 
 % Write the variable data to the file
-fprintf(file_id, '%f\n', Vsav);
+for t = 1:t_size
+    for x = 1:x_size
+        for y = 1:y_size
+            for z = 1:z_size
+                fprintf(file_id, '%f\n', Vsav(x, y, z, t));
+            end
+        end
+    end
+end
 
 % Close the file
 fclose(file_id);
